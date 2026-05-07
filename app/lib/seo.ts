@@ -52,6 +52,8 @@ export const indexableRoutes = [
   { path: "/careers", priority: 0.82, changeFrequency: "daily" as const },
   { path: "/site-map", priority: 0.7, changeFrequency: "weekly" as const },
   { path: "/contact", priority: 0.8, changeFrequency: "monthly" as const },
+  { path: "/privacy-policy", priority: 0.62, changeFrequency: "yearly" as const },
+  { path: "/terms-and-conditions", priority: 0.62, changeFrequency: "yearly" as const },
   { path: "/products/zyrohr", priority: 0.78, changeFrequency: "monthly" as const },
   { path: "/products/zyrocrm", priority: 0.78, changeFrequency: "monthly" as const },
   { path: "/products/zyropos", priority: 0.78, changeFrequency: "monthly" as const },

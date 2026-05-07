@@ -10,7 +10,9 @@ import {
   Network,
   Phone,
   Rocket,
+  Scale,
   Send,
+  ShieldCheck,
   TerminalSquare,
 } from "lucide-react";
 import Image from "next/image";
@@ -303,6 +305,14 @@ export default function ContactPage() {
           <Link href="/site-map">
             <Network />
             Site map
+          </Link>
+          <Link href="/privacy-policy">
+            <ShieldCheck />
+            Privacy
+          </Link>
+          <Link href="/terms-and-conditions">
+            <Scale />
+            Terms
           </Link>
         </div>
         <span className="footer-location">Kozhikode and Wayanad, Kerala</span>

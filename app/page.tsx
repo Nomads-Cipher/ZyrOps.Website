@@ -15,6 +15,7 @@ import {
   MonitorCog,
   Phone,
   Rocket,
+  Scale,
   ShieldCheck,
   Smartphone,
   TerminalSquare,
@@ -763,6 +764,14 @@ export default function Home() {
           <Link href="/site-map">
             <Globe2 />
             Site map
+          </Link>
+          <Link href="/privacy-policy">
+            <ShieldCheck />
+            Privacy
+          </Link>
+          <Link href="/terms-and-conditions">
+            <Scale />
+            Terms
           </Link>
         </div>
         <span className="footer-location">Kozhikode and Wayanad, Kerala</span>

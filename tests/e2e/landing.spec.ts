@@ -111,12 +111,40 @@ test("serves crawl endpoints for search engines", async ({ page }) => {
   const sitemapResponse = await page.goto("/sitemap.xml");
   expect(sitemapResponse?.status()).toBe(200);
   await expect(page.locator("body")).toContainText("https://zyrops.com/");
+  await expect(page.locator("body")).toContainText("https://zyrops.com/blogs");
   await expect(page.locator("body")).toContainText("https://zyrops.com/products/zyrohr");
-  await expect(page.locator("body")).toContainText("https://zyrops.com/blogs/ai-saas-from-idea-to-operations");
+  await expect(page.locator("body")).toContainText("https://zyrops.com/privacy-policy");
+  await expect(page.locator("body")).toContainText("https://zyrops.com/terms-and-conditions");
 
   const robotsResponse = await page.goto("/robots.txt");
   expect(robotsResponse?.status()).toBe(200);
   await expect(page.locator("body")).toContainText("Sitemap: https://zyrops.com/sitemap.xml");
+});
+
+test("opens legal routes with policy content and footer links", async ({ page }) => {
+  const legalRoutes = [
+    {
+      path: "/privacy-policy",
+      heading: "Privacy Policy",
+      markers: ["Information We Collect", "Your Rights", "We do not sell personal information"],
+    },
+    {
+      path: "/terms-and-conditions",
+      heading: "Terms and Conditions",
+      markers: ["Website Use", "Intellectual Property", "Governing Law and Changes"],
+    },
+  ];
+
+  for (const route of legalRoutes) {
+    const response = await page.goto(route.path);
+    expect(response?.status()).toBe(200);
+    await expect(page.getByRole("heading", { name: route.heading })).toBeVisible();
+    for (const marker of route.markers) {
+      await expect(page.getByText(marker).first()).toBeVisible();
+    }
+    await expect(page.getByRole("link", { name: /Privacy Policy|Privacy/i }).first()).toBeVisible();
+    await expect(page.getByRole("link", { name: /Terms/i }).first()).toBeVisible();
+  }
 });
 
 test("keeps landing product cards inside the mobile viewport", async ({ page }) => {

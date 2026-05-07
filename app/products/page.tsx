@@ -9,6 +9,8 @@ import {
   MonitorCog,
   Network,
   Rocket,
+  Scale,
+  ShieldCheck,
   Smartphone,
   TerminalSquare,
 } from "lucide-react";
@@ -276,6 +278,14 @@ export default function ProductsPage() {
           <Link href="/site-map">
             <Network />
             Site map
+          </Link>
+          <Link href="/privacy-policy">
+            <ShieldCheck />
+            Privacy
+          </Link>
+          <Link href="/terms-and-conditions">
+            <Scale />
+            Terms
           </Link>
         </div>
         <span className="footer-location">Kozhikode and Wayanad, Kerala</span>

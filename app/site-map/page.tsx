@@ -1,4 +1,4 @@
-import { ArrowLeft, ExternalLink, Network } from "lucide-react";
+import { ArrowLeft, ExternalLink, Network, Scale, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -14,6 +14,8 @@ const routeLabels: Record<string, string> = {
   "/careers": "Careers",
   "/site-map": "Site map",
   "/contact": "Contact",
+  "/privacy-policy": "Privacy Policy",
+  "/terms-and-conditions": "Terms and Conditions",
   "/products/zyrohr": "ZyroHR",
   "/products/zyrocrm": "ZyroCRM",
   "/products/zyropos": "ZyroPOS",
@@ -27,6 +29,8 @@ const routeDescriptions: Record<string, string> = {
   "/careers": "Open roles from the ZyrOps HRMS careers board.",
   "/site-map": "Plain HTML crawl map for important public pages.",
   "/contact": "Email, phone, social links, and project intake details.",
+  "/privacy-policy": "How ZyrOps handles enquiries, website signals, product conversations, and privacy requests.",
+  "/terms-and-conditions": "Rules for website use, project enquiries, SaaS products, acceptable use, and legal terms.",
   "/products/zyrohr": "AI-powered HRMS for attendance, payroll, approvals, and employee records.",
   "/products/zyrocrm": "AI-powered CRM for leads, pipelines, accounts, and follow-ups.",
   "/products/zyropos": "Point-of-sale platform for billing, inventory, pricing, and retail reports.",
@@ -160,6 +164,14 @@ export default async function SiteMapPage() {
           <Link href="/contact">
             <Network />
             Contact
+          </Link>
+          <Link href="/privacy-policy">
+            <ShieldCheck />
+            Privacy
+          </Link>
+          <Link href="/terms-and-conditions">
+            <Scale />
+            Terms
           </Link>
         </div>
         <span className="footer-location">Kozhikode and Wayanad, Kerala</span>

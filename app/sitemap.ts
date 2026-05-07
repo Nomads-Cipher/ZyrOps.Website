@@ -4,7 +4,7 @@ import { getCareerJobs } from "./careers/careers-api";
 import { getBlogPosts } from "./blogs/blog-api";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const lastModified = new Date("2026-04-30T00:00:00.000Z");
+  const lastModified = new Date("2026-05-07T00:00:00.000Z");
 
   const routes = indexableRoutes.map((route) => ({
     url: absoluteUrl(route.path),
