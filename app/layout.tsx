@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@vercel/analytics/next";
 import { absoluteUrl, brand, jsonLdScript, organizationSchema, seoKeywords, siteUrl } from "./lib/seo";
 import "./globals.css";
 
@@ -82,6 +83,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: jsonLdScript(organizationSchema()) }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
